@@ -1,22 +1,29 @@
-package abstract_;
+package aggregation;
 
 public class Main {
 	public static void main(String args[]) {
-		// abstract - used to define abstract classes and methods.
-		//            is the process of hiding details and showing essential features
+		// aggregation = represents a "has-a" relationship between objects.
+		//                One object contains another object as part of its structure.
+		//				  but those object can exist independently
 		
-		// we can't create a object because shape is abstract class
-		// Shape shape = new Shape(); // error
-		Circle circle = new Circle(2);
-		Triangle triangle = new Triangle(5,6);
-		Rectangle rectangle = new Rectangle(5,4);
+		Book book1 = new Book("harry potter 1",423);
+		Book book2 = new Book("shiva",423);
+		Book book3 = new Book("harry potter 2",423);
 		
-		System.out.println(circle.area());
-		System.out.println(triangle.area());
-		System.out.println(rectangle.area());
+		Book[] books = {book1,book2,book3}; // store object
 		
-		circle.display();
-		triangle.display();
-		rectangle.display();
+		/* for(Book book:books) { // access each object data's
+			System.out.println(book.displayInfo());
+		} */
+		
+		Library library = new Library("NYC Public Library", 1897, books);
+		
+		library.displayInfo();
+		/*
+		 *  library:
+		 *  	displayInfo:
+		 *  		book:
+		 *  			displayInfo
+		 * */
 	}
 }
