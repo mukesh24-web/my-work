@@ -1,16 +1,18 @@
-package array;
+package compostion;
 
 public class Car {
 	String model;
-	String color;
+	int year;
+	Engine engine; // object
 	
-	// Assign the value
-	Car(String model,String color){
+	Car(String model,int year,String engineType){  // Car constructor
 		this.model = model;
-		this.color = color;
+		this.year = year;
+		this.engine = new Engine(engineType);
 	}
 	
-	void drive() {
-		System.out.println("you are driving "+ this.color + " " +this.model);
+	void start() {
+		this.engine.start();
+		System.out.println("The "+this.model+" is running");
 	}
 }
