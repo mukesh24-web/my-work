@@ -1,17 +1,29 @@
-package compostion;
+package dynamic_polymorphism;
+
+import java.util.Scanner;
 
 public class Main {
-	public static void main(String args[]) {
-		// Compostion = represents a "part-of" relationship between objects
-		//              For example an engine is "part of" a car.
-		//              Allows complex objects to be constructed from smaller objects.
+
+	public static void main(String[] args) {
+		// dynamic / runtime polymorphism
+		// when the method that gets executed is decided
+		// at runtime based on the actual type of the object
 		
-		Car car = new Car("Corvette",2025,"V8");
+		Scanner scanner = new Scanner(System.in);
 		
-		System.out.println(car.model);
-		System.out.println(car.year);
-		System.out.println(car.engine.type);
+		Animal animal;
 		
-		car.start();
+		System.out.println("Would you like dog or cat? dog-1,cat-2");
+		int choice = scanner.nextInt();
+		
+		if(choice == 1) {
+			animal = new Dog();
+			animal.speak();
+		}
+		else {
+			animal = new Cat();
+			animal.speak();
+		}
 	}
+
 }
