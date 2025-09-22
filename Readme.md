@@ -1,3 +1,3 @@
 # demo
 
-That i going to upload my practice in this repository
+That i going to upload my code in this repository
